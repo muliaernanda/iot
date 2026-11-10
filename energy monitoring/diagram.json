@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "author": "Smart Energy Monitoring System",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-v1",
+      "id": "esp",
+      "top": -10,
+      "left": -10,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potV",
+      "top": -110,
+      "left": -230,
+      "attrs": {
+        "value": "900"
+      }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "potI",
+      "top": 70,
+      "left": -230,
+      "attrs": {
+        "value": "250"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": -150,
+      "left": 210,
+      "attrs": {
+        "pins": "i2c"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledG",
+      "top": 80,
+      "left": 240,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledY",
+      "top": 130,
+      "left": 240,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledR",
+      "top": 180,
+      "left": 240,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 235,
+      "left": 240,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "resG",
+      "top": 95,
+      "left": 165,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "resY",
+      "top": 145,
+      "left": 165,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "resR",
+      "top": 195,
+      "left": 165,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "potV:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "potV:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "potV:SIG",
+      "esp:34",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "potI:VCC",
+      "esp:3V3",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "potI:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "potI:SIG",
+      "esp:35",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "lcd:VCC",
+      "esp:5V",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "lcd:GND",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "lcd:SDA",
+      "esp:21",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "lcd:SCL",
+      "esp:22",
+      "blue",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "ledG:C",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "ledY:C",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "ledR:C",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "buzz:1",
+      "esp:25",
+      "purple",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "buzz:2",
+      "esp:GND.1",
+      "black",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:18",
+      "resG:1",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "resG:2",
+      "ledG:A",
+      "green",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:19",
+      "resY:1",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "resY:2",
+      "ledY:A",
+      "yellow",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "esp:23",
+      "resR:1",
+      "red",
+      [
+        "v0"
+      ]
+    ],
+    [
+      "resR:2",
+      "ledR:A",
+      "red",
+      [
+        "v0"
+      ]
+    ]
+  ],
+  "dependencies": {}
+}
